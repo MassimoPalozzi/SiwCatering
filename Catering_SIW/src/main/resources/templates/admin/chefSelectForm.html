@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template.html :: headerfiles('selectChef')">
+</head>
+
+<body>
+<header th:replace="template.html :: intestazione"></header>
+<div class="container my-5">
+    <h2>Scegli un chef</h2>
+    <form th:action="@{/admin/sendChefId}" method="POST">
+        <div th:each="chef : ${chefObjs}" class="form-check">
+            <input class="form-check-input" type="radio" name="idChef" th:value="${chef.id}" id="chefRadioButton" required>
+            <label class="form-check-label" th:for="chefRadioButton" th:text="${chef.nome} + ' ' + ${chef.cognome} + ' (' + ${chef.nazionalita} + ')'"></label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Scegli Chef</button>
+    </form>
+</div>
+<footer th:replace="template.html :: footer"></footer>
+</body>
+
+</html>

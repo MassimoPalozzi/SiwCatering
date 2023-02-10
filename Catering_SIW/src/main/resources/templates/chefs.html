@@ -1,0 +1,29 @@
+DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="template.html :: headerfiles('chefs')">
+	</head>
+
+	<body>
+		<header th:replace="template.html :: intestazione"></header>
+		<div class="container-fluid vh-100">
+			<img src="/images/sfondoChef.jpg" alt="Sfondo" class="w-100 vh-100">
+			<div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+				<div><h1>Chefs</h1></div>
+				<div>
+						<ul class="list-unstyled">
+							<li th:each="chef: ${chefs}">
+								<table>
+									<tr>
+										<td><a class="nav-link" th:href="@{'/chef' + '/' + ${chef.id}}" th:text="${chef.nome} + ' ' + ${chef.cognome}">gianni</a></td>
+									</tr>
+								</table>
+							</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+		<footer th:replace="template.html :: footer"></footer>
+	</body>
+
+</html>
