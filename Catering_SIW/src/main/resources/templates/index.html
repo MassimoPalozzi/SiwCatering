@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ 
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="template.html :: headerfiles('Index')">
+	</head>
+	<body>
+		<header th:replace="template.html :: commonPage"></header>
+			<div class="container my-5">
+				<div class="d-flex">
+					<div class="p-5 bg-light text-dark w-75" style = "height: 256px;">
+						<h2 class="display-3">Benvenuti nel nostro sito di Catering</h2>
+						<p class="lead">Siamo un'azienda che offre servizi di catering per tutti i tipi di eventi. Siamo specializzati nella preparazione di cibo delizioso e nell'organizzazione di eventi di successo. Siamo a tua disposizione per aiutarti a creare l'evento dei tuoi sogni.</p>
+					</div>
+					<div class="w-25" style = "height: 256px;">
+						<img src="/images/presentation.jpg" class="img-fluid" alt="presentation image">
+					</div>
+				</div>
+				</div>
+			<div class="jumbotron text-center" style="background-color: #e6e6e6; padding-top: 20px;">
+			<h1 class="display-4">Contattaci</h1>
+			<p class="lead">Per ulteriori informazioni sui nostri servizi e per prenotare il tuo prossimo evento!</p>
+			<hr class="my-4">
+			<p>
+				<a th:href="@{/login}"><button class="btn btn-primary mr-2">Login</button></a>
+				<a th:href="@{/register}"><button class="btn btn-secondary">Registrazione</button></a>
+			</p>
+			<p class="lead">Oppure contattaci al nostro numero +39345789803</p>
+		</div>
+		<footer th:replace="template.html :: footer"></footer>
+	</body>
+</html>

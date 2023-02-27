@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template.html :: headerfiles('ingredienti')">
+</head>
+<body style="background-image: url('/images/sfondoChef.jpg'); background-size: cover; min-height: 70vh; justify-content: center;">
+<header th:replace="template.html :: intestazione"></header>
+<div class="card overflow-auto" style="max-height: 500px;">
+    <div class="card-body">
+        <h3 class="card-title text-center">Visualizza ingrediente</h3>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Origine</th>
+                    <th>Descrizione</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ingrediente : ${ingredientiObjs}">
+                    <td th:text="${ingrediente.nome}"></td>
+                    <td th:text="${ingrediente.origine}"></td>
+                    <td th:text="${ingrediente.descrizione}"></td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</div>
+<footer th:replace="template.html :: footer"></footer>
+</body>
+</html>

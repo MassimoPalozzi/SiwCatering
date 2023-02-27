@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template.html :: headerfiles('piattoAddForm')">
+</head>
+<body>
+<header th:replace="template.html :: intestazione"></header>
+<h1>Aggiungi piatto</h1>
+<form method="post" th:action="@{/admin/piatto}">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" name="nome" id="nome"/>
+    </div>
+    <div class="form-group">
+        <label for="descrizione">Descrizione:</label>
+        <input type="text" class="form-control" name="descrizione" id="descrizione"/>
+    </div>
+    <br>
+    <label for="ingredienti">Ingredienti:</label>
+    <div class="card overflow-auto";>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Seleziona</th>
+                    <th>Nome</th>
+                    <th>Origine</th>
+                    <th>Descrizione</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ingrediente : ${ingredienti}">
+                    <td>
+                        <input type="checkbox" name="ingredientiIds" th:value="${ingrediente.id}"/>
+                    </td>
+                    <td th:text="${ingrediente.nome}"></td>
+                    <td th:text="${ingrediente.origine}"></td>
+                    <td th:text="${ingrediente.descrizione}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn text-center btn-danger" type="submit">Aggiungi piatto</button>
+    </div>
+    <br>
+    <br>
+</form>
+<footer th:replace="template.html :: footer"></footer>
+</body>
+</html>

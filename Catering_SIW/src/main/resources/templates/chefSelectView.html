@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template.html :: headerfiles('selectChef')">
+</head>
+
+<body style="background-image: url('/images/sfondo_.jpg'); background-size: cover; min-height: 70vh; justify-content: center;">>
+<header th:replace="template.html :: intestazione"></header>
+<div class="card overflow-auto">
+  <div class="card-body">
+    <h3 class="card-title text-center">Seleziona chef</h3>
+    <form th:action="@{/sendChefId}" method="POST">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Seleziona</th>
+          <th>Nome</th>
+          <th>Cognome</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="chef : ${chefObjs}">
+          <td><input type="radio" name="idChef" th:value="${chef.id}"/></td>
+          <td th:text="${chef.nome}"></td>
+          <td th:text="${chef.cognome}"></td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-danger">Seleziona Chef</button>
+      </div>
+    </form>
+  </div>
+</div>
+<footer th:replace="template.html :: footer"></footer>
+</body>
+</html>

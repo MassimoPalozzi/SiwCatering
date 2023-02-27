@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template.html :: headerfiles('Homepage')">
+</head>
+<body>
+<header th:replace="template.html :: intestazione"></header>
+<div class="container my-5">
+	<div class="d-flex">
+		<div class="p-5 bg-light text-dark w-75" style="height: 256px;">
+			<h2 class="display-3">Benvenuti nel nostro sito di Catering</h2>
+			<p class="lead">Siamo un'azienda che offre servizi di catering per tutti i tipi di eventi. Siamo specializzati nella preparazione di cibo delizioso e nell'organizzazione di eventi di successo. Siamo a tua disposizione per aiutarti a creare l'evento dei tuoi sogni.</p>
+		</div>
+		<div class="w-25">
+			<img src="/images/presentation.jpg" class="img-fluid" alt="presentation image" style="height: 256px;">
+		</div>
+	</div>
+</div>
+<div class="container-fluid h-100 d-flex align-items-center bg-primary"
+	 style="background-image: url('/images/sfondo_.jpg'); background-size: cover; min-height: 70vh; justify-content: center;">
+	<div class="row">
+		<div class="col-12 mx-auto">
+			<div class="card">
+				<h5 class="card-header">Servizi catering</h5>
+					<div class="card-body shadow-lg p-5 bg-white text-center">
+						<div class="d-flex justify-content-around">
+							<a class="btn btn-primary mb-2" th:href="@{/buffets}">Visualizza buffet</a>
+							<a class="btn btn-primary mb-2" th:href="@{/chefs}">Visualiza chef</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer th:replace="template.html :: footer"></footer>
+</body>
+</html>

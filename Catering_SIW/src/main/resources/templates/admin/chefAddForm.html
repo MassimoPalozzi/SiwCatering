@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template.html :: headerfiles('chefAddForm')">
+</head>
+
+<body>
+<header th:replace="template.html :: intestazione"></header>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">Aggiungi Chef</div>
+        <div class="card-body">
+            <form method="post" th:action="@{/admin/chef}" th:object="${chef}">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" th:field="*{nome}"/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="cognome">Cognome:</label>
+                    <input type="text" class="form-control" id="cognome" th:field="*{cognome}"/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="nazionalita">Nazionalità:</label>
+                    <input type="text" class="form-control" id="nazionalita" th:field="*{nazionalita}"/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></p>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-primary">Aggiungi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="template.html :: footer"></footer>
+</body>
+</html>

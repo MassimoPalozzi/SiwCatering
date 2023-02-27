@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template.html :: headerfiles('administration')">
+</head>
+<body style="background-image: url(/images/sfondo_.jpg); background-size: cover">
+    <header th:replace="template.html :: intestazione"></header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center mb-3">
+                <div class="card mx-auto">
+                    <h5 class="card-header">Gestione Chef</h5>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <a th:href="@{/admin/chefAdd}" class="btn btn-primary mb-2">Crea Chef</a>
+                            <a th:href="@{/admin/chefRemove}" class="btn btn-primary mb-2">Rimuovi Chef</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mx-auto">
+                    <h5 class="card-header">Gestione Buffet</h5>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <a th:href="@{/admin/chefSelect}" class="btn btn-primary mb-2">Aggiungi buffet</a>
+                            <a th:href="@{/admin/chefSelectDelete}" class="btn btn-primary mb-2">Rimuovi buffet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card mx-auto">
+                    <h5 class="card-header">Gestione Piatti</h5>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <a th:href="@{/admin/piattoAddForm}" class="btn btn-primary mb-2">Aggiungi piatto</a>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <a th:href="@{/admin/selectPiatto}" class="btn btn-primary mb-2">Modifica piatto</a>
+                            <a th:href="@{/admin/piattoRemoveForm}" class="btn btn-primary mb-2">Rimuovi piatto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mx-auto">
+                    <h5 class="card-header">Gestione Ingredienti</h5>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <a th:href="@{/admin/addIngrediente}" class="btn btn-primary mb-2">Aggiungi
+                                ingrediente</a>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <a th:href="@{/admin/selectIngrediente}" class="btn btn-primary mb-2">Modifica
+                                ingrediente</a>
+                            <a th:href="@{/admin/ingredienteRemove}" class="btn btn-primary mb-2">Rimuovi
+                                ingrediente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="template.html :: footer"></footer>
+</body>
+</html>
+
